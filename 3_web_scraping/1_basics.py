@@ -20,5 +20,6 @@ if response.status_code == 200:
 	for crypto in crypto_list:
 		name = crypto.contents[3].find("a", {"class": "currency-name-container"})
 		price = crypto.find("a", {"class": "price"})
+		link = name.get("href")
 
-		print ("{} : {}".format(name.text, price.text))
+		print ("{} : {} -> {}".format(name.text, price.text, link))
